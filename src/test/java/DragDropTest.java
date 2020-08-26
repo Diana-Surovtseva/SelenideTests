@@ -17,7 +17,7 @@ public class DragDropTest {
 
     @BeforeMethod
     public void setUp() {
-        WebDriverFactory.createInstance("Chrome");
+        WebDriverFactory.createInstance("Firefox");
         dragDropPage = new DragDropPage();
     }
 
@@ -25,9 +25,9 @@ public class DragDropTest {
     public void dragDropFigure() {
         dragDropPage.navigateTo();
         dragDropPage.figureIsVisible();
-//        dragDropPage.firstFigureWasNamed();
+        dragDropPage.firstFigureWasNamed();
         dragDropPage.dragNDrop();
-        dragDropPage.dragNDrop();
+
 
 //        dragDropPage.firstFigureWasNamed1();
 

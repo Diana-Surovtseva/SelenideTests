@@ -24,20 +24,22 @@ public class DragDropPage {
         WebDriverWait wait = new WebDriverWait(WebDriverFactory.getDriver(), 10);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='column-a']"))).isDisplayed();
     }
-//    public void firstFigureWasNamed(){
-//       firstFigure =  WebDriverFactory.getDriver().findElement(By.xpath("//*[@id='column-a']")).getText();
-//    }
-
-    public void dragNDrop(){
-        //Element which needs to drag.
-        WebElement From = WebDriverFactory.getDriver().findElement(By.xpath("//*[@id='column-a']"));
-        //Element on which need to drop.
-        WebElement To = WebDriverFactory.getDriver().findElement(By.xpath("//*[@id='column-b']"));
-        //Using Action class for drag and drop.
-        Actions act = new Actions(WebDriverFactory.getDriver());
-        //Dragged and dropped.
-        act.dragAndDrop(From, To).build().perform();
+    public void firstFigureWasNamed(){
+       firstFigure =  WebDriverFactory.getDriver().findElement(By.xpath("//*[@id='columns']//*[1]//*[1]")).getText();
+        System.out.println("First figure on start is " + firstFigure);
     }
+    public void dragNDrop(){
+        //Actions class method to drag and drop
+        Actions builder = new Actions(WebDriverFactory.getDriver());
+        WebElement from = WebDriverFactory.getDriver().findElement(By.id("column-a"));
+        WebElement to = WebDriverFactory.getDriver().findElement(By.id("column-b"));
+        //Perform drag and drop
+        builder.dragAndDrop(from, to).perform();
+
+
+    }
+
+
 //    public void firstFigureWasNamed1(){
 //        firstFigure1 = WebDriverFactory.getDriver().findElement(By.xpath("//*[@id='column-a']")).getText();
 //    }
