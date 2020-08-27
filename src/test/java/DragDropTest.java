@@ -11,7 +11,6 @@ public class DragDropTest {
     DragDropPage dragDropPage = null;
 
 
-
     @BeforeMethod
     public void setUp() {
         WebDriverFactory.createInstance("Firefox");
