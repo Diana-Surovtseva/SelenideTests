@@ -1,3 +1,4 @@
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.DragDropPage;
@@ -26,4 +27,8 @@ public class DragDropTest {
         assertTrue(dragDropPage.element1 != dragDropPage.element2);
     }
 
+    @AfterMethod
+    public void tearDown() {
+        WebDriverFactory.getDriver().quit();
+    }
 }
